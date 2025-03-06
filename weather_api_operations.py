@@ -1,7 +1,11 @@
+import os
+from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
 
-API_KEY = '677f6b056af14113e02f38ae1b18f342'
+load_dotenv()
+
+API_KEY = os.environ("API_KEY")
 LAT, LON = 43.2334, -79.9496
 MODE = 'xml'
 LANG = 'en'
