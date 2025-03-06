@@ -32,3 +32,4 @@ def return_current_weather():
     wind_dir = soup.wind.direction.get("value") #degs
     return (time, temp, humd, press, wind_spd, wind_dir)
 
+
