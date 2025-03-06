@@ -31,8 +31,8 @@ def log_dht_reading_to_db():
 
 def log_outdoor_reading_to_db():
     readable_time, temp, humd, press, wind_spd, wind_dir = outdoor.return_current_weather()
-    sql_insert_statement= ("INSERT INTO outdoorweather VALUES (%i, \'%s\', %f, %d, %d, %f, %i)"
-                           % (time.time(), readable_time, float(temp), int(humd), int(press), float(wind_spd), wind_dir))
+    sql_insert_statement= ("INSERT INTO outdoorweather VALUES (%i, \'%s\', %f, %d, %d, %f, %d)"
+                           % (time.time(), readable_time, float(temp), int(humd), int(press), float(wind_spd), int(wind_dir)))
     cur.execute(sql_insert_statement)
     con.commit()
 
