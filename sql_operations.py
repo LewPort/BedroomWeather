@@ -30,9 +30,9 @@ def log_dht_reading_to_db():
         con.commit()
 
 def log_outdoor_reading_to_db():
-    time, temp, humd, press, wind_spd, wind_dir = outdoor.return_current_weather()
+    readable_time, temp, humd, press, wind_spd, wind_dir = outdoor.return_current_weather()
     sql_insert_statement= ("INSERT INTO outdoorweather VALUES (%i, \'%s\', %f, %d, %d, %f, %i)"
-                           % (time.time(), time, temp, humd, press, wind_spd, wind_dir))
+                           % (time.time(), readable_time, temp, humd, press, wind_spd, wind_dir))
     cur.execute(sql_insert_statement)
     con.commit()
 
