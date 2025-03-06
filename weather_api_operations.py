@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 load_dotenv()
 
-API_KEY = os.environ("API_KEY")
+API_KEY = os.getenv("API_KEY")
 LAT, LON = 43.2334, -79.9496
 MODE = 'xml'
 LANG = 'en'
