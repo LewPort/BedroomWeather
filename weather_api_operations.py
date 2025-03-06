@@ -30,6 +30,5 @@ def return_current_weather():
     press = soup.pressure.get("value") #HPa
     wind_spd = soup.wind.speed.get("value") #m/s
     wind_dir = soup.wind.direction.get("value") #degs
-
     return (time, temp, humd, press, wind_spd, wind_dir)
 
