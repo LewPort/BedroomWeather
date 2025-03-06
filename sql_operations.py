@@ -17,7 +17,7 @@ def return_list_from_db(db, days = 7):
     current_time = time.time()
     sql_select_statement = """SELECT * 
     FROM %s
-    WHERE time > %s""" % (db, current_time - 60*60*24*days)
+    WHERE time > %s""" % (db, current_time - (60*60*24*days))
     cur.execute(sql_select_statement)
     data = cur.fetchall()
     return data

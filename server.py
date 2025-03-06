@@ -1,5 +1,4 @@
 from flask import Flask
-import sql_operations
 import dht_operations as dht
 
 app = Flask(__name__)
