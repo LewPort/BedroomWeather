@@ -4,11 +4,11 @@ import time
 import sys
 from matplotlib import pyplot as plt
 
-data = sql_operations.list_from_all_data()
+bedroom_data = sql_operations.return_list_from_db('bedroomweather', 7)
 
-x_axis = [dt.fromtimestamp(row[0]) for row in data]
-temp = [row[2] for row in data]
-humd = [row[3] for row in data]
+x_axis = [dt.fromtimestamp(row[0]) for row in bedroom_data]
+temp = [row[2] for row in bedroom_data]
+humd = [row[3] for row in bedroom_data]
 
 fig, temp_axis = plt.subplots()
 humd_axis = temp_axis.twinx()
