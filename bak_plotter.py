@@ -9,9 +9,6 @@ TEMP_COLOUR = 'lightcoral'
 OTHER_COLOUR = 'gainsboro'
 
 bedroom_data = sql_operations.return_list_from_db('bedroomweather', 3)
-outdoor_data = sql_operations.return_list-from_db('outdoorweather', 3)
-
-plt.style.use('dark_background')
 
 x_axis = [dt.fromtimestamp(row[0]) for row in bedroom_data]
 temp = [row[2] for row in bedroom_data]
@@ -24,11 +21,18 @@ humd_axis.set_ylim(20,80)
 temp_axis.tick_params(axis='x', rotation=45, color=OTHER_COLOUR)
 temp_axis.set_ylabel("Temp ºc", color=TEMP_COLOUR)
 humd_axis.set_ylabel("Humidity %", color=HUMD_COLOUR)
+humd_axis.spines['top'].set_color(OTHER_COLOUR)
+humd_axis.spines['right'].set_color(OTHER_COLOUR)
+humd_axis.spines['bottom'].set_color(OTHER_COLOUR)
+humd_axis.spines['left'].set_color(OTHER_COLOUR)
+temp_axis.xaxis.label.set_color(OTHER_COLOUR)
+temp_axis.xaxis.set_ticklabels(color=OTHER_COLOUR)
+
 
 temp_axis.plot(x_axis, temp, color=TEMP_COLOUR)
 humd_axis.plot(x_axis, humd, color=HUMD_COLOUR)
 plt.title("Temperature & Humidity - Generated %s" % time.strftime('%a %H:%M'), color=OTHER_COLOUR)
 fig.tight_layout(pad=1)
-plt.savefig("/home/lewis/bedroomweather/static/indoor_graph.png", format='png', transparent=True)
+plt.savefig("/home/lewis/bedroomweather/static/graph.png", format='png', transparent=True)
 plt.close(fig)
 sys.exit()
