@@ -9,7 +9,8 @@ def home():
     webshite = '''
     <center>
     <title>Bedroom Weather</title>
-    <body style="background-color:#024063; color:#c1e2f5; font-family: Tahoma, sans-serif;">
+    <body style="background: url(static/bokeh.jpg); background-size: auto;
+    color:#c1e2f5; font-family: Tahoma, sans-serif;">
     <h1>Bedroom Weather</h1>
     <p>%s</p>
     <p>%s°c</p>
