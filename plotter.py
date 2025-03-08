@@ -9,7 +9,7 @@ TEMP_COLOUR = 'lightcoral'
 OTHER_COLOUR = 'gainsboro'
 
 bedroom_data = sql_operations.return_list_from_db('bedroomweather', 3)
-outdoor_data = sql_operations.return_list-from_db('outdoorweather', 3)
+outdoor_data = sql_operations.return_list_from_db('outdoorweather', 3)
 
 plt.style.use('dark_background')
 
@@ -22,8 +22,8 @@ def generate_chart_image(data, output_filename):
 
     fig, temp_axis = plt.subplots()
     humd_axis = temp_axis.twinx()
-    temp_axis.set_ylim(0, 30)
-    humd_axis.set_ylim(20,80)
+    #temp_axis.set_ylim(0, 30)
+    #humd_axis.set_ylim(20,80)
     temp_axis.tick_params(axis='x', rotation=45, color=OTHER_COLOUR)
     temp_axis.set_ylabel("Temp ºc", color=TEMP_COLOUR)
     humd_axis.set_ylabel("Humidity %", color=HUMD_COLOUR)
