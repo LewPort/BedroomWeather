@@ -14,7 +14,7 @@ def home():
     <p>%s</p>
     <p>%s°c</p>
     <p>%s%%</p>
-    <img src=\"static/outdoor_graph.png\">
-    <img src=\"static/indoor_graph.png\">
+    <img src=\"static/bedroom.png\">
+    <img src=\"static/outdoor.png\">
     </center>''' % (human_time, t, h)
     return webshite
