@@ -15,26 +15,26 @@ plt.style.use('dark_background')
 
 
 
-def generate_chart_image(data, output_filename):
+def generate_chart_image(data, title):
     x_axis = [dt.fromtimestamp(row[0]) for row in data]
     temp = [row[2] for row in data]
     humd = [row[3] for row in data]
 
     fig, temp_axis = plt.subplots()
     humd_axis = temp_axis.twinx()
-    #temp_axis.set_ylim(0, 30)
-    #humd_axis.set_ylim(20,80)
+    temp_axis.set_ylim(-30, 30)
+    humd_axis.set_ylim(0,100)
     temp_axis.tick_params(axis='x', rotation=45, color=OTHER_COLOUR)
     temp_axis.set_ylabel("Temp ºc", color=TEMP_COLOUR)
     humd_axis.set_ylabel("Humidity %", color=HUMD_COLOUR)
 
     temp_axis.plot(x_axis, temp, color=TEMP_COLOUR)
     humd_axis.plot(x_axis, humd, color=HUMD_COLOUR)
-    plt.title("Temperature & Humidity - Generated %s" % time.strftime('%a %H:%M'), color=OTHER_COLOUR)
+    plt.title("%s - Generated %s" % (title, time.strftime('%a %H:%M')), color=OTHER_COLOUR)
     fig.tight_layout(pad=1)
-    plt.savefig("/home/lewis/bedroomweather/static/%s.png" % output_filename, format='png', transparent=True)
+    plt.savefig("/home/lewis/bedroomweather/static/%s.png" % title.lower(), format='png', transparent=True)
     plt.close(fig)
 
-generate_chart_image(bedroom_data, 'bedroom')
-generate_chart_image(outdoor_data, 'outdoor')
+generate_chart_image(bedroom_data, 'Bedroom')
+generate_chart_image(outdoor_data, 'Outdoor')
 sys.exit()

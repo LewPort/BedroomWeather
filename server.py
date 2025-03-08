@@ -10,7 +10,7 @@ def home():
     <center>
     <title>Bedroom Weather</title>
     <body style="background: url(static/bokeh.jpg); background-size: auto;
-    color:#c1e2f5; font-family: Tahoma, sans-serif;">
+    color:#c1e2f5; font-family: arial; font-style: italic; letter-spacing: 3px;">
     <h1>Bedroom Weather</h1>
     <p>%s</p>
     <p>%s°c</p>

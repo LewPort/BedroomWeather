@@ -36,5 +36,5 @@ def log_outdoor_reading_to_db():
     cur.execute(sql_insert_statement)
     con.commit()
 
-#log_dht_reading_to_db()
+log_dht_reading_to_db()
 log_outdoor_reading_to_db()
