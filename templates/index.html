@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>BEDROOM WEATHER</title>
 </head>
-    <body style="background: url(static/worldmap_bg_low.jpg); background-size: auto;
+    <body style="background: url({{url_for('static', filename='worldmap_bg_low.png')}}); background-size: auto;
     color:#c1e2f5; font-family: arial; font-style: italic; letter-spacing: 3px;">
+    <center>
     <h1>Bedroom Weather</h1>
     <p>{{human_time}}</p>
     <p>{{temp}}°c</p>
