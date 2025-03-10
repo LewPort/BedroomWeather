@@ -7,7 +7,7 @@ import time
 #Set DATA pin
 DHT_PIN = 4
 
-con = sqlite3.connect("/home/lewis/bedroomweather/bedroomweather.db")
+con = sqlite3.connect("/home/lewis/bedroomweather/bedroomweather.db", check_same_thread=False)
 cur = con.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS bedroomweather(time INT, readable TEXT, temp REAL, humd REAL)")
 cur.execute("""CREATE TABLE IF NOT EXISTS outdoorweather(time INT, readable_time TEXT, temp REAL, humd INTEGER, 
