@@ -2,7 +2,6 @@ from flask import Flask
 from flask import render_template
 import dht_operations as dht
 import sql_operations as sql
-from plotter import outdoor_data
 
 app = Flask(__name__)
 
