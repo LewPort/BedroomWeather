@@ -17,9 +17,22 @@
 <body>
     <center>
     <h1>Bedroom Weather</h1>
-    <p>{{ human_time }}</p>
-    <p>{{ temp }}°c</p>
-    <p>{{ humid }}%</p>
+        <p>{{ human_time }}</p>
+        <table>
+            <tr>
+                <th>Indoor</th>
+                <th>Outdoor</th>
+            </tr>
+            <tr>
+                <td>{{ indoor_temp }}°c</td>
+                <td>{{ outdoor_temp }}ºc - {{ outdoor_pressure }}hPa</td>
+            </tr>
+            <tr>
+                <td>{{ indoor_humid }}%</td>
+                <td>{{ outdoor_humid }}% - {{ outdoor_wind_speed }}kmh</td>
+            </tr>
+
+        </table>
     <img src="{{ url_for('static', filename='bedroom.png') }}">
     <img src="{{ url_for('static', filename='outdoor.png') }}">
     </center>
