@@ -14,8 +14,8 @@ def home():
                            human_time=indoor_human_time,
                            indoor_temp=indoor_temp,
                            indoor_humid=indoor_humid,
-                           outdoor_temp=outdoor_temp,
+                           outdoor_temp=round(outdoor_temp, 1),
                            outdoor_humid=outdoor_humid,
                            outdoor_pressure=outdoor_pressure,
-                           outdoor_wind_speed=outdoor_wind_speed,
+                           outdoor_wind_speed=round(outdoor_wind_speed,1),
                            outdoor_wind_dir=outdoor_wind_dir)
