@@ -12,7 +12,7 @@
             font-style: italic;
             letter-spacing: 3px;
             }
-        td, th {
+        table {
             padding-right: 30px;
             padding-left: 30px;
             }
@@ -24,18 +24,25 @@
         <table align="center">
             <tr align="left">
                 <th>Indoor</th>
-                <th>Outdoor</th>
             </tr>
             <tr align="left">
                 <td align="left">{{ indoor_temp }}°c</td>
-                <td><table><tr><td>{{ outdoor_temp }}ºc</td><td>{{ outdoor_pressure }}hPa</td></tr></table></td>
-            </td>
+            </tr>
             <tr align="left">
                 <td>{{ indoor_humid }}%</td>
-            <td><table><tr><td>{{ outdoor_humid }}%</td><td>{{ outdoor_wind_speed }}km/h @ {{ outdoor_wind_dir }}º</td></tr></table></td>
-
             </tr>
 
+        </table>
+    <table align="center">
+            <tr align="left">
+                <th>Outdoor</th>
+            </tr>
+            <tr align="left">
+                <td>{{ outdoor_temp }}ºc</td><td>{{ outdoor_pressure }}hPa</td>
+            </tr>
+            <tr align="left">
+                <td>{{ outdoor_humid }}%</td><td>{{ outdoor_wind_speed }}km/h @ {{ outdoor_wind_dir }}º</td>
+            </tr>
         </table>
     <img src="{{ url_for('static', filename='bedroom.png') }}">
     <img src="{{ url_for('static', filename='outdoor.png') }}">
