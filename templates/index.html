@@ -45,8 +45,10 @@
                 <td>{{ outdoor_humid }}%</td><td>{{ outdoor_wind_speed }}km/h @ {{ outdoor_wind_dir }}º</td>
             </tr>
         </table>
-    <img src="{{ url_for('static', filename='bedroom.png') }}">
-    <img src="{{ url_for('static', filename='outdoor.png') }}">
+    <p>
+        <img src="{{ url_for('static', filename='bedroom.png') }}">
+        <img src="{{ url_for('static', filename='outdoor.png') }}">
+    </p>
     </center>
 </body>
 </html>
