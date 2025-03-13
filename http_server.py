@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-import dht_operations as dht
+from DHT import dht_operations as dht
 import sql_operations as sql
 
 app = Flask(__name__)

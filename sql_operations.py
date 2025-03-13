@@ -1,11 +1,7 @@
-#Libraries
-import dht_operations as dht
+import bedroom_api_operations as dht
 import weather_api_operations as outdoor
 import sqlite3
 import time
-
-#Set DATA pin
-DHT_PIN = 4
 
 con = sqlite3.connect("/home/lewis/bedroomweather/bedroomweather.db", check_same_thread=False)
 cur = con.cursor()
@@ -23,7 +19,7 @@ def return_list_from_db(db, days = 7):
     return data
 
 def log_dht_reading_to_db():
-    t, h, time_logged, human_time = dht.get_live_data(DHT_PIN)
+    t, h, time_logged, human_time = dht.get_dht_json().values()
     if (t or h) != None:
         sql_insert_statement= "INSERT INTO bedroomweather VALUES (%i, \'%s\', %f, %f)" % (time_logged, human_time, t, h)
         cur.execute(sql_insert_statement)
