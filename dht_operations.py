@@ -20,6 +20,6 @@ def write_to_json(dht_object):
                 'unix': time_logged,
                 'time': human_time
                 }
-        json.dumps(data, f, indent=4)
+        json.dump(data, f ,indent=4)
 
 write_to_json(get_live_data(DHT_PIN))
