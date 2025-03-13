@@ -1,13 +1,13 @@
 from flask import Flask
 from flask import render_template
-from DHT import dht_operations as dht
+import bedroom_api_operations
 import sql_operations as sql
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    indoor_temp, indoor_humid, time, indoor_human_time = dht.get_live_data(4)
+    indoor_temp, indoor_humid, time, indoor_human_time = bedroom_api_operations.get_dht_json()
     outdoor_data = sql.return_list_from_db('outdoorweather', 1)[-1]
     outdoor_time, outdoor_human_time, outdoor_temp, outdoor_humid, outdoor_pressure, outdoor_wind_speed, outdoor_wind_dir = outdoor_data
     return render_template("index.html",
