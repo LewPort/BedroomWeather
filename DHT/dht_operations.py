@@ -23,3 +23,4 @@ def write_to_json(dht_object):
         json.dump(data, f ,indent=4)
 
 write_to_json(get_live_data(DHT_PIN))
+#butts
