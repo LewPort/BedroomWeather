@@ -12,7 +12,8 @@ def get_live_data(pin):
     t = round(t, 2)
     return (t, h, time_logged, human_time) #return all that info as tuple
 
-def write_to_json(t, h, time_logged, human_time):
+def write_to_json(dht_object):
+    t, h, time_logged, human_time = dht_object
     with open('./json/dht.json', 'w') as f:
         data = {'temp': t,
                 'humd': h,
