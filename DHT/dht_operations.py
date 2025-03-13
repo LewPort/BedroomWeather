@@ -14,7 +14,7 @@ def get_live_data(pin):
 
 def write_to_json(dht_object):
     t, h, time_logged, human_time = dht_object
-    with open('DHT/json/dht.json', 'w') as f:
+    with open('DHT/json/dht.json', 'w+') as f:
         data = {'temp': t,
                 'humd': h,
                 'unix': time_logged,
