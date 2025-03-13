@@ -10,7 +10,7 @@ def get_live_data(pin):
     human_time = time.ctime(time_logged) #Create a human-readable version of time_logged
     h = round(h, 2) #Round them to 2 decimal places
     t = round(t, 2)
-    return t, h, time_logged, human_time #return all that info as tuple
+    return (t, h, time_logged, human_time) #return all that info as tuple
 
 def write_to_json(t, h, time_logged, human_time):
     with open('./json/dht.json', 'w') as f:
